@@ -1,9 +1,11 @@
 
 from django.urls import path
-from .views import index, categories, categories_by_slug
+from . import views
+
 
 urlpatterns = [
-    path('', index),
-    path('cat/<int:cat_id>/', categories),
-    path('cat/<slug:cat_slug>/', categories_by_slug),
+    path('', views.index, name='home'),
+    path('about/', views.about, name='about'),
+    path('cat/<int:cat_id>/', views.categories),
+    path('cat/<slug:cat_slug>/', views.categories_by_slug),
 ]
