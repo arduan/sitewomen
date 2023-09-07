@@ -4,11 +4,12 @@ from django.template.loader import render_to_string
 
 
 def index(request):
-    return render(request, 'index.html')
+    data = {'title': 'Главная страница'}
+    return render(request, 'index.html', data)
 
 
 def about(request):
-    return render(request, 'about.html')
+    return render(request, 'about.html', {'title': 'О сайте'})
 
 
 def categories(request, cat_id):
