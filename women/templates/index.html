@@ -6,9 +6,13 @@
 </head>
 <body>
 <p>{{ menu }}</p>
-<p>{{ float }}</p>
+<p>{{ float | add:"50" }}</p>
 <p>{{ dict.name }}</p>
 <p>{{ dict.age }}</p>
 <h1>{{title}}</h1>
+<p>Текущая дата: {% now "Y-m-d" %}</p>
+<p>Текущее время: {% now "H:i:s" %}</p>
+{% now "H:i:s" %}
+
 </body>
 </html>

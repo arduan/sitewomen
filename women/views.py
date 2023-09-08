@@ -4,19 +4,21 @@ from django.template.loader import render_to_string
 
 menu = ['О сайте', 'Добавить статью', 'Обратная связь', 'Войти']
 
+
 def index(request):
     data = {'title': 'Главная страница',
             'menu': menu,
             'float': 34.53,
             'lst': [2, 4, 3, 'Hello World', True],
             'set': {3, 4, 5, 6},
-            'dict': {'name': 'Vitaliy', 'age': 63}
+            'dict': {'name': 'Vitaliy', 'age': 63},
+            'value': 'Текущее время',
             }
     return render(request, 'index.html', context=data)
 
 
 def about(request):
-    return render(request, 'about.html', {'title': 'О сайте',})
+    return render(request, 'about.html', {'title': 'О сайте', })
 
 
 def categories(request, cat_id):
