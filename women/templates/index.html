@@ -14,5 +14,18 @@
 <p>Текущее время: {% now "H:i:s" %}</p>
 {% now "H:i:s" %}
 
+<ul>
+    {% for p in posts %}
+    <li>
+        <h2>{{p.title}}</h2>
+        <p>{{ p.content }}</p>
+        {% if not forloop.last %}
+        <hr>
+        {% endif %}
+    </li>
+    {% endfor %}
+
+</ul>
+
 </body>
 </html>

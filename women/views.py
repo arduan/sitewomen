@@ -4,6 +4,13 @@ from django.template.loader import render_to_string
 
 menu = ['О сайте', 'Добавить статью', 'Обратная связь', 'Войти']
 
+data_db = [
+    {'id': 1, 'title': 'Анджелино Джоли', 'content': 'Биография Анджелины Джоли', 'is_public': True},
+    {'id': 2, 'title': 'Марго Робби', 'content': 'Биография Марго Робби', 'is_public': False},
+    {'id': 3, 'title': 'Джулия Робертс', 'content': 'Биография Джулия Робертс', 'is_public': True},
+
+]
+
 
 def index(request):
     data = {'title': 'Главная страница',
@@ -13,6 +20,7 @@ def index(request):
             'set': {3, 4, 5, 6},
             'dict': {'name': 'Vitaliy', 'age': 63},
             'value': 'Текущее время',
+            'posts': data_db
             }
     return render(request, 'index.html', context=data)
 
