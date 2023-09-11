@@ -5,6 +5,15 @@
     <title>{{title}}</title>
 </head>
 <body>
-<p>{{title}}</p
+<ul>
+    <li><a href="{% url 'home' %}">Главная страница</a></li>
+    {% for m in menu %}
+    {% if not forloop.last %}
+    <li>{% else %}<li class="last">{% endif %}
+        <a href="{% url m.url_name %}">{{m.title}}</a>
+    </li>
+    {% endfor %}
+</ul>
+
 </body>
 </html>
