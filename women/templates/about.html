@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% extends 'base.html' %}
+
+{% block content %}
     <title>{{title}}</title>
-</head>
-<body>
+<h1>О сайте</h1>
 <ul>
     <li><a href="{% url 'home' %}">Главная страница</a></li>
     {% for m in menu %}
@@ -14,6 +12,4 @@
     </li>
     {% endfor %}
 </ul>
-
-</body>
-</html>
+{% endblock %}
