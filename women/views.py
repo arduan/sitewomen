@@ -8,7 +8,7 @@ menu = [{'title': "О сайте", 'url_name': 'about'},
         {'title': "Добавить статью", 'url_name': 'add_page'},
         {'title': "Обратная связь", 'url_name': 'contact'},
         {'title': "Войти", 'url_name': 'login'}
-]
+        ]
 
 data_db = [
     {'id': 1, 'title': 'Анджелина Джоли', 'content': ''' (англ. Angelina Jolie, при рождении Войт (англ. Voight), ранее Джоли Питт (англ. Jolie Pitt); род. 4 июня 1975, Лос-Анджелес, Калифорния, США) — американская актриса кино, телевидения и озвучивания, кинорежиссёр, сценаристка, продюсер, фотомодель, посол доброй воли ООН.
@@ -16,6 +16,11 @@ data_db = [
      'is_published': True},
     {'id': 2, 'title': 'Марго Робби', 'content': 'Биография Марго Робби', 'is_published': True},
     {'id': 3, 'title': 'Джулия Робертс', 'content': 'Биография Джулия Робертс', 'is_published': True},
+]
+cats_db = [
+    {'id': 1, 'name': 'Актрисы'},
+    {'id': 2, 'name': 'Певицы'},
+    {'id': 3, 'name': 'Спортсменки'},
 ]
 
 
@@ -46,6 +51,10 @@ def contact(request):
 
 def login(request):
     return HttpResponse("Авторизация")
+
+
+def show_category(request, cat_id):
+    return index(request)
 
 
 def page_not_found(request, exception):
