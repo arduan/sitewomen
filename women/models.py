@@ -10,3 +10,9 @@ class Women(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        ordering = ['-title_created']
+        indexes = [
+            models.Index(fields=['-time_created'])
+        ]
