@@ -1,4 +1,3 @@
-
 from django.contrib import admin
 from django.urls import path, include
 from women import views
@@ -10,5 +9,7 @@ urlpatterns = [
     path("__debug__/", include("debug_toolbar.urls")),
 ]
 
-
 handler404 = page_not_found
+
+admin.site.site_header = "Панель администрирования"
+admin.site.index_title = "Известные женщины мира"
