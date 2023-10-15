@@ -82,3 +82,8 @@ def show_tag_postlist(request, tag_slug):
     }
 
     return render(request, 'women/index.html', context=data)
+
+
+def archive(request, year):
+    if year > 2023:
+        return redirect('/')
