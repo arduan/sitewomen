@@ -23,7 +23,6 @@ class Women(models.Model):
     tags = models.ManyToManyField('TagPost', blank=True, related_name='tags', verbose_name='Теги')
     husband = models.OneToOneField('Husband', on_delete=models.SET_NULL, null=True, blank=True, related_name='wuman',
                                    verbose_name='Муж')
-
     objects = models.Manager()
     published = PublishedMenager()
 
