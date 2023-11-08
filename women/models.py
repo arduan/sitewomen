@@ -42,6 +42,7 @@ class Women(models.Model):
 
 
 class Category(models.Model):
+    objects = None
     name = models.CharField(max_length=100, db_index=True, verbose_name='Категория')
     slug = models.SlugField(max_length=255, unique=True, db_index=True, verbose_name='Slug')
 
